@@ -46,7 +46,7 @@ document.querySelector('.subscribe-btn').addEventListener('click', () => {
 
 // Função para buscar vídeos do canal
 async function fetchVideos() {
-    const apiKey = CONFIG.PRIVATE_API_KEY;
+    const apiKey = 'AIzaSyDk6X0KW0Jpx7bMIwfyBfo9n7b0pEcj8Vo';
     const channelId = 'UCZI8ehZkyxWwiOQv3pZ-RAw';
     const maxResults = 6;
 
