@@ -69,7 +69,7 @@ O site é totalmente responsivo e se adapta a diferentes tamanhos de tela:
 - YouTube: [@Mysti07](https://www.youtube.com/@Mysti07)
 - Twitch: [mysti0107](https://www.twitch.tv/mysti0107)
 - Twitter: [@MystiCYt0](https://x.com/MystiCYt0)
-- Instagram: [@myst_i07](https://www.instagram.com/myst_i07/)
+- Instagram: [@myst_i07](https://www.instagram.com/tasty_mysti/)
 
 ## 🤝 Contribuindo
 
