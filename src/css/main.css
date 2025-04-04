@@ -33,6 +33,105 @@ body {
 }
 
 /* ============================
+   NAVBAR 
+============================ */
+.navbar {
+    background-color: rgba(35, 35, 46, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 8vh;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.logo {
+    color: var(--accent);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.logo img {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-item {
+    padding: 0.5rem 0;
+    letter-spacing: 3px;
+}
+
+.nav-link {
+    color: var(--light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+    opacity: 1;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--light);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* ============================
    SUBSCRIBE BUTTON
 ============================ */
 .subscribe-btn {
@@ -62,60 +161,6 @@ body {
         font-size: 1.5rem;
         transition: all 0.3s ease-in-out;
         display: inline-block;
-    }
-}
-
-/* ============================
-   NAVBAR
-============================ */
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: #23232e;
-    height: 8vh;
-    position: fixed;
-    width: 100%;
-    z-index: 2;
-
-    .logo {
-        display: flex;
-        align-items: center;
-        font-size: 24px;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        margin-left: 1rem;
-        color: var(--accent);
-    }
-
-    .nav-list {
-        list-style: none;
-        display: flex;
-
-        li {
-            letter-spacing: 3px;
-            margin-left: 32px;
-        }
-    }
-
-    .mobile-menu {
-        display: none;
-        cursor: pointer;
-
-        div {
-            width: 32px;
-            height: 2px;
-            background: #fff;
-            margin: 8px;
-            transition: 0.3s;
-        }
-    }
-
-    /* Exibir o menu ao adicionar a classe */
-    .menu-visible .nav-links {
-        display: flex;
-        margin-top: 1.4rem;
     }
 }
 
@@ -211,8 +256,8 @@ nav {
             p {
                 color: var(--light);
                 padding: 2rem;
-                line-height: 2;
-                text-align: justify;
+                line-height: 1.7rem;
+                text-align: center;
             }
 
             img {

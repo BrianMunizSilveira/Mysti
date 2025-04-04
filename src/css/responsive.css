@@ -2,152 +2,90 @@
    RESPONSIVE DESIGN
 ============================ */
 
-/* Base mobile-first styles */
-body {
-    overflow-x: hidden;
-
-    @media (min-width: 1000px) {
-        overflow-x: visible;
+/* Estilos para mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
     }
-}
-
-/* Navigation */
-.nav-list {
-    @media (max-width: 999px) {
-        position: absolute;
+    
+    .nav-menu {
+        position: fixed;
         top: 8vh;
-        right: 0;
-        width: 50vw;
+        left: -100%;
+        width: 70%;
         height: 92vh;
-        background: #23232e;
+        background-color: rgba(35, 35, 46, 0.95);
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in;
-
-        li {
-            margin-left: 0;
-            opacity: 0;
-        }
-
-        &.active {
-            transform: translateX(0);
-        }
+        justify-content: flex-start;
+        padding-top: 3rem;
+        gap: 2rem;
+        transition: left 0.5s ease;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
 
-    @media (max-width: 768px) {
-        width: 70%;
-        padding: 7rem 0;
-    }
-
-    @media (max-width: 480px) {
-        width: 80%;
-        padding: 5rem 0;
-    }
-}
-
-.mobile-menu {
-    display: none;
-
-    @media (max-width: 999px) {
-        display: block;
-        margin-right: 1rem;
-    }
-}
-
-/* Hero Section */
-.hero {
-    .hero-content {
-        @media (max-width: 768px) {
+    /* Hero Section */
+    .hero {
+        .hero-content {
             padding: 1rem;
-        }
 
-        .hero-title {
-            @media (max-width: 768px) {
+            .hero-title {
                 font-size: 2.5rem;
                 line-height: 1.2;
             }
 
-            @media (max-width: 480px) {
-                font-size: 2rem;
-            }
-
-            @media (max-width: 360px) {
-                font-size: 1.8rem;
-            }
-        }
-
-        .hero-subtitle {
-            @media (max-width: 768px) {
+            .hero-subtitle {
                 font-size: 1.2rem;
                 padding: 0 1rem;
             }
-
-            @media (max-width: 480px) {
-                font-size: 1rem;
-            }
         }
     }
-}
 
-/* About Me Section */
-.section {
-    @media (max-width: 360px) {
+    /* About Me Section */
+    .section {
         padding: 3rem 1rem;
-    }
 
-    .about-me-section {
-        @media (max-width: 768px) {
+        .about-me-section {
             grid-template-columns: 1fr;
             padding: 1rem;
             gap: 2rem;
-        }
 
-        @media (max-width: 480px) {
-            padding: 0.5rem;
-        }
-
-        .img-about {
-            @media (max-width: 768px) {
+            .img-about {
                 width: 80%;
                 max-width: 304px;
                 margin: 0 auto;
             }
-
-            @media (max-width: 480px) {
-                width: 100%;
-            }
-
-            @media (max-width: 360px) {
-                max-width: 260px;
-            }
         }
-    }
 
-    #about-me {
-        @media (max-width: 768px) {
+        #about-me {
             padding: 2rem 1rem;
             text-align: center;
         }
-
-        @media (max-width: 480px) {
-            padding: 1.5rem 0.5rem;
-        }
     }
-}
 
-/* Content Grid */
-.content-grid {
-    @media (max-width: 768px) {
+    /* Content Grid */
+    .content-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         padding: 1rem;
     }
-}
 
-.content-card {
-    @media (max-width: 768px) {
+    .content-card {
         padding: 1.5rem;
 
         p {
@@ -156,7 +94,56 @@ body {
         }
     }
 
-    @media (max-width: 480px) {
+    /* Video Section */
+    .videos-section {
+        padding: 3rem 1rem;
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    /* Social Section */
+    .social-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .social-card {
+        padding: 1.5rem;
+    }
+
+    /* Subscribe Button */
+    .subscribe-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .section {
+        .about-me-section {
+            .img-about {
+                width: 100%;
+            }
+        }
+
+        #about-me {
+            padding: 1.5rem 0.5rem;
+        }
+    }
+
+    .content-card {
         h3 {
             font-size: 1.5rem;
         }
@@ -169,46 +156,14 @@ body {
     }
 }
 
-/* Video Section */
-.videos-section {
-    @media (max-width: 480px) {
+@media (max-width: 360px) {
+    .section {
         padding: 3rem 1rem;
-
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-        }
     }
-}
 
-/* Social Section */
-.social-grid {
-    @media (max-width: 480px) {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-}
-
-.social-card {
-    @media (max-width: 480px) {
-        padding: 1.5rem;
-    }
-}
-
-/* Subscribe Button */
-.subscribe-btn {
-    @media (max-width: 768px) {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-        margin-top: 1.5rem;
-    }
-}
-
-/* Navigation Logo */
-nav {
-    .logo {
-        @media (max-width: 360px) {
-            font-size: 1.1rem;
+    .about-me-section {
+        .img-about {
+            max-width: 260px;
         }
     }
 }
